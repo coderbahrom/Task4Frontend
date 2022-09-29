@@ -1,15 +1,9 @@
 import React, { useEffect, useState } from "react";
-import {
-  DataGrid,
-  GridColDef,
-  GridValueGetterParams,
-  GridRenderCellParams,
-} from "@mui/x-data-grid";
+import { DataGrid, GridColDef, GridRenderCellParams } from "@mui/x-data-grid";
 import NoEncryptionGmailerrorredIcon from "@mui/icons-material/NoEncryptionGmailerrorred";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useNavigate } from "react-router-dom";
 import LockOpenIcon from "@mui/icons-material/LockOpen";
-import Button from "@mui/material/Button";
 import { api } from "../../utils/api";
 import Swal from "sweetalert2";
 function UsersTable() {
@@ -22,14 +16,14 @@ function UsersTable() {
     password: String;
     status: boolean;
   }[];
-  type rows = {
+  type rowss = {
     id: number;
     key: String;
   }[];
   const navigate = useNavigate();
   const [rows, setRows] = useState<usersType>([]);
-  const [selectedRows, setSelectedRows] = useState<rows>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [selectedRows, setSelectedRows] = useState<rowss>([]);
+  // const [isLoading, setIsLoading] = useState<boolean>(false);
   let selectedRowsId = selectedRows.map((row) => row.key);
   const onDeleteSelectedRows = () => {
     Swal.fire({
@@ -249,7 +243,7 @@ function UsersTable() {
         console.log("error: ", err);
       })
       .finally(() => {
-        setIsLoading(true);
+        // setIsLoading(true);
       });
   }, []);
   console.log("rows", rows);

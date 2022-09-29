@@ -22,13 +22,7 @@ function Login() {
   const navigate = useNavigate();
   const [isLogged, setIsLogged] = useState<boolean>(false);
 
-  const {
-    reset,
-    register,
-    setValue,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<FormData>();
+  const { register, handleSubmit } = useForm<FormData>();
   const onSubmit = (data: any) => {
     console.log(data);
     let bodyData = {

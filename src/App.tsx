@@ -12,7 +12,8 @@ function App() {
     if (!token) {
       navigate("/login");
     }
-  });
+    //eslint-disable-next-line
+  }, []);
   return (
     <Routes>
       <Route path="/" element={<Users />} />

@@ -8,6 +8,7 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 function Navbar() {
+  const token = localStorage.getItem("token");
   return (
     <div>
       {" "}
@@ -24,11 +25,11 @@ function Navbar() {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              News
+              Users
             </Typography>
             <Link to="/login">
               {" "}
-              <Button color="inherit">Login</Button>
+              <Button color="inherit">{token ? "Logout" : "Login"}</Button>
             </Link>
             <Link to="/signup">
               {" "}
@@ -37,7 +38,6 @@ function Navbar() {
           </Toolbar>
         </AppBar>
       </Box>
-      <p className="text-3xl font-bold underline">Hello world!</p>
     </div>
   );
 }

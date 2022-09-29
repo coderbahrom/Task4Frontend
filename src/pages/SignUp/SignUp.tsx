@@ -14,13 +14,7 @@ type FormData = {
 };
 function SignUp() {
   const navigate = useNavigate();
-  const {
-    reset,
-    register,
-    setValue,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<FormData>();
+  const { reset, register, handleSubmit } = useForm<FormData>();
   const onSubmit = (data: any) => {
     let bodyData = {
       firstName: data.firstName,

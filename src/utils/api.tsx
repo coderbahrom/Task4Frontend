@@ -1,13 +1,13 @@
 import axios from "axios";
 const api = axios.create({
-  baseURL: "http://localhost:5000/",
+  baseURL: "https://hello-user-managment.herokuapp.com/",
 });
 
 api.interceptors.request.use(
   async (config) => {
     const access_token = localStorage.getItem("token");
     config.headers = {
-      Authorization: `Bearer ${access_token}`,
+      authorization: `Bearer ${access_token}`,
       Accept: "application/json",
       "Content-Type": "application/json",
     };
